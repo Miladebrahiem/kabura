@@ -1,0 +1,225 @@
+/* Header Styles - Paste this in the Custom CSS section */
+/* Reset and Base Styles */
+.kb-header *,
+.kb-header *::before,
+.kb-header *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Header Container */
+.kb-header {
+  background-color: #80232A;
+  padding: 1.5rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  position: relative;
+  z-index: 100;
+}
+
+.kb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.kb-header-content {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 3rem;
+}
+
+/* Logo */
+.kb-logo {
+  height: 64px;
+  width: auto;
+  display: block;
+  transition: transform 0.2s;
+}
+
+.kb-logo:hover {
+  transform: scale(1.02);
+}
+
+/* Navigation */
+.kb-nav {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.kb-nav-link {
+  color: white !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.kb-nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background-color: #3499A3;
+  transition: width 0.2s ease;
+}
+
+.kb-nav-link:hover {
+  color: #3499A3 !important;
+}
+
+.kb-nav-link:hover::after {
+  width: 100%;
+}
+
+/* Contact Button */
+.kb-contact-btn {
+  display: flex !important;
+  align-items: center;
+  gap: 0.75rem;
+  background-color: #94731A;
+  color: white !important;
+  padding: 0.875rem 1.75rem;
+  border-radius: 9999px;
+  text-decoration: none !important;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.kb-contact-btn:hover {
+  background-color: #7c6016;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(148, 115, 26, 0.2);
+}
+
+.kb-contact-btn svg {
+  transition: transform 0.2s;
+}
+
+.kb-contact-btn:hover svg {
+  transform: translateX(2px);
+}
+
+/* Border Bottom */
+.kb-border-bottom {
+  height: 4px;
+  background-color: #222F52;
+}
+
+/* Mobile Menu Button */
+.kb-menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 101;
+}
+
+.kb-menu-toggle span {
+  width: 100%;
+  height: 2px;
+  background-color: white;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+/* Mobile Menu */
+.kb-mobile-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background-color: #80232A;
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+}
+
+.kb-mobile-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 0 2rem;
+}
+
+.kb-mobile-nav-link {
+  color: white !important;
+  text-decoration: none !important;
+  padding: 1rem;
+  font-weight: 500;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  transition: all 0.2s;
+}
+
+.kb-mobile-nav-link:last-child {
+  border-bottom: none;
+}
+
+.kb-mobile-nav-link:hover {
+  background-color: rgba(255,255,255,0.1);
+  padding-left: 1.5rem;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .kb-header-content {
+    grid-template-columns: auto auto;
+  }
+
+  .kb-menu-toggle {
+    display: flex;
+  }
+
+  .kb-nav, .kb-actions {
+    display: none;
+  }
+
+  .kb-mobile-menu {
+    display: block;
+  }
+
+  /* Menu Open State */
+  .kb-header.menu-open .kb-mobile-menu {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Hamburger Animation */
+  .kb-menu-toggle.active span:nth-child(1) {
+    transform: translateY(9px) rotate(45deg);
+  }
+
+  .kb-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .kb-menu-toggle.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg);
+  }
+}
+
+/* Additional Mobile Refinements */
+@media (max-width: 480px) {
+  .kb-container {
+    padding: 0 1rem;
+  }
+
+  .kb-logo {
+    height: 48px;
+  }
+}

@@ -1,0 +1,133 @@
+/* Add this to Elementor Custom CSS */
+.kb-header {
+  background: #80232A;
+  padding: 15px 0;
+  position: relative;
+  z-index: 999;
+}
+
+.kb-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo */
+.kb-logo img {
+  height: 60px;
+  width: auto;
+}
+
+/* Navigation */
+.kb-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.kb-nav a {
+  color: white !important;
+  text-decoration: none !important;
+  font-weight: 500;
+  position: relative;
+  padding: 5px 0;
+}
+
+.kb-nav a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #3499A3;
+  transition: width 0.3s;
+}
+
+.kb-nav a:hover::after {
+  width: 100%;
+}
+
+/* Contact Button */
+.kb-contact {
+  background: #94731A;
+  color: white !important;
+  text-decoration: none !important;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+.kb-contact:hover {
+  background: #7c6016;
+  transform: translateY(-2px);
+}
+
+/* Mobile Menu Button */
+.kb-mobile-trigger {
+  display: none;
+  width: 30px;
+  height: 25px;
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+.kb-mobile-trigger span {
+  display: block;
+  width: 100%;
+  height: 3px;
+  background: white;
+  position: absolute;
+  left: 0;
+  transition: 0.3s;
+}
+
+.kb-mobile-trigger span:nth-child(1) { top: 0; }
+.kb-mobile-trigger span:nth-child(2) { top: 11px; }
+.kb-mobile-trigger span:nth-child(3) { bottom: 0; }
+
+.kb-mobile-trigger.active span:nth-child(1) {
+  transform: translateY(11px) rotate(45deg);
+}
+
+.kb-mobile-trigger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.kb-mobile-trigger.active span:nth-child(3) {
+  transform: translateY(-11px) rotate(-45deg);
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .kb-nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: #80232A;
+    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+
+  .kb-nav.active {
+    display: flex;
+  }
+
+  .kb-contact {
+    display: none;
+  }
+
+  .kb-mobile-trigger {
+    display: block;
+  }
+}

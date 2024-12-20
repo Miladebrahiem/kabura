@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kabura Header</title>
+  <style>
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Header styles */
+    .header {
+      background-color: #80232A;
+      padding: 1rem;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .header-content {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .logo {
+      height: 64px;
+      width: auto;
+    }
+
+    .nav {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    .nav-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      transition: color 0.2s;
+    }
+
+    .nav-link:hover {
+      color: #3499A3;
+    }
+
+    .contact-btn {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background-color: #94731A;
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .contact-btn:hover {
+      opacity: 0.9;
+    }
+
+    .border-bottom {
+      height: 4px;
+      background-color: #222F52;
+    }
+
+    /* Mobile styles */
+    @media (max-width: 768px) {
+      .header-content {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 1rem;
+      }
+
+      .nav {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="https://kabura.nl">
+          <img 
+            src="http://kabura.nl/wp-content/uploads/2024/10/Kabura-catering-logo.jpg" 
+            alt="Kabura Catering" 
+            class="logo"
+          >
+        </a>
+        <nav class="nav">
+          <a href="#" class="nav-link">Home</a>
+          <a href="#" class="nav-link">Over ons</a>
+          <a href="#" class="nav-link">Catering</a>
+          <a href="#" class="nav-link">Contact</a>
+        </nav>
+        <a href="mailto:info@kabura.nl" class="contact-btn">
+          Contact
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </header>
+  <div class="border-bottom"></div>
+</body>
+</html>

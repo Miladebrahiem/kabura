@@ -1,0 +1,61 @@
+<!-- Header HTML - Paste this in Elementor HTML widget -->
+<header class="kb-header">
+  <div class="kb-container">
+    <div class="kb-header-content">
+      <!-- Logo -->
+      <a href="https://kabura.nl" class="kb-logo-link">
+        <img 
+          src="http://kabura.nl/wp-content/uploads/2024/10/Kabura-catering-logo.jpg" 
+          alt="Kabura Catering" 
+          class="kb-logo"
+        >
+      </a>
+      
+      <!-- Navigation -->
+      <nav class="kb-nav">
+        <a href="#" class="kb-nav-link">Home</a>
+        <a href="#" class="kb-nav-link">Over ons</a>
+        <a href="#" class="kb-nav-link">Catering</a>
+        <a href="#" class="kb-nav-link">Contact</a>
+      </nav>
+
+      <!-- Contact Button -->
+      <div class="kb-actions">
+        <a href="mailto:info@kabura.nl" class="kb-contact-btn">
+          <span>Contact</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="16" x="2" y="4" rx="2"/>
+            <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button class="kb-menu-toggle" onclick="toggleKbMenu()" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="kb-mobile-menu">
+    <nav class="kb-mobile-nav">
+      <a href="#" class="kb-mobile-nav-link">Home</a>
+      <a href="#" class="kb-mobile-nav-link">Over ons</a>
+      <a href="#" class="kb-mobile-nav-link">Catering</a>
+      <a href="#" class="kb-mobile-nav-link">Contact</a>
+    </nav>
+  </div>
+</header>
+<div class="kb-border-bottom"></div>
+
+<script>
+function toggleKbMenu() {
+  const header = document.querySelector('.kb-header');
+  const menuBtn = document.querySelector('.kb-menu-toggle');
+  header.classList.toggle('menu-open');
+  menuBtn.classList.toggle('active');
+}
+</script>

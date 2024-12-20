@@ -1,0 +1,34 @@
+<!-- Add this to an Elementor HTML widget -->
+<header class="kb-header">
+  <div class="kb-container">
+    <!-- Logo -->
+    <a href="https://kabura.nl" class="kb-logo">
+      <img src="http://kabura.nl/wp-content/uploads/2024/10/Kabura-catering-logo.jpg" alt="Kabura Catering">
+    </a>
+
+    <!-- Desktop Menu -->
+    <nav class="kb-nav">
+      <a href="#">Home</a>
+      <a href="#">Over ons</a>
+      <a href="#">Catering</a>
+      <a href="#">Contact</a>
+    </nav>
+
+    <!-- Contact Button -->
+    <a href="mailto:info@kabura.nl" class="kb-contact">Contact</a>
+
+    <!-- Mobile Menu Button -->
+    <button class="kb-mobile-trigger" aria-label="Menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<script>
+document.querySelector('.kb-mobile-trigger').addEventListener('click', function() {
+  this.classList.toggle('active');
+  document.querySelector('.kb-nav').classList.toggle('active');
+});
+</script>

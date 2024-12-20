@@ -1,0 +1,139 @@
+// Create and inject styles
+const styles = `
+.kb-slide-menu {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 300px;
+  height: 100vh;
+  background: #80232A;
+  transition: 0.3s;
+  z-index: 999999;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.kb-slide-menu.active { right: 0; }
+
+.kb-menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 999998;
+}
+
+.kb-menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.kb-menu-toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  z-index: 999997;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.kb-menu-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.kb-menu-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.kb-menu-header img {
+  width: 180px;
+  height: auto;
+  margin-bottom: 15px;
+}
+
+.kb-menu-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 16px;
+}
+
+.kb-contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.kb-contact-btn {
+  display: block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white !important;
+  text-decoration: none !important;
+  text-align: center;
+  transition: 0.3s;
+  font-weight: 500;
+}
+
+.kb-contact-btn:hover { opacity: 0.9; }
+
+.kb-whatsapp { background: #3499A3; }
+.kb-phone { background: #222F52; }
+.kb-quote { background: #94731A; }
+
+@media (max-width: 768px) {
+  .kb-slide-menu { width: 100%; }
+}`;
+
+// Create style element
+const styleSheet = document.createElement('style');
+styleSheet.textContent = styles;
+document.head.appendChild(styleSheet);
+
+// Create menu HTML
+const menuHTML = `
+  <button class="kb-menu-toggle" onclick="toggleKbMenu()">Menu</button>
+  <div class="kb-menu-overlay" onclick="toggleKbMenu()"></div>
+  <div class="kb-slide-menu">
+    <button class="kb-menu-close" onclick="toggleKbMenu()">×</button>
+    
+    <div class="kb-menu-header">
+      <img src="http://kabura.nl/wp-content/uploads/2024/10/Kabura-catering-logo.jpg" alt="Kabura">
+      <h3>Authentiek Afghaanse catering</h3>
+    </div>
+    
+    <div class="kb-contact-buttons">
+      <a href="https://wa.me/31852129942" class="kb-contact-btn kb-whatsapp">WhatsApp</a>
+      <a href="tel:+31852129942" class="kb-contact-btn kb-phone">Bel ons</a>
+      <a href="https://kabura.nl/offerte-aanvragen/" class="kb-contact-btn kb-quote">Offerte aanvragen</a>
+    </div>
+  </div>
+`;
+
+// Create menu container
+const menuContainer = document.createElement('div');
+menuContainer.innerHTML = menuHTML;
+document.body.appendChild(menuContainer);
+
+// Add toggle function
+window.toggleKbMenu = function() {
+  document.querySelector('.kb-slide-menu').classList.toggle('active');
+  document.querySelector('.kb-menu-overlay').classList.toggle('active');
+};

@@ -1,0 +1,35 @@
+<div class="slide-menu-container">
+  <!-- Menu Button -->
+  <button class="menu-button" onclick="toggleMenu()">
+    <span>Menu</span>
+  </button>
+
+  <!-- Overlay -->
+  <div class="menu-overlay" onclick="toggleMenu()"></div>
+
+  <!-- Slide Menu -->
+  <div class="slide-menu">
+    <!-- Close Button -->
+    <button class="close-button" onclick="toggleMenu()">×</button>
+
+    <!-- Logo and Title -->
+    <div class="menu-header">
+      <img src="http://kabura.nl/wp-content/uploads/2024/10/Kabura-catering-logo.jpg" alt="Kabura" class="logo">
+      <h3>Authentiek Afghaanse catering</h3>
+    </div>
+
+    <!-- Contact Buttons -->
+    <div class="contact-buttons">
+      <a href="https://wa.me/31852129942" class="contact-btn whatsapp">WhatsApp</a>
+      <a href="tel:+31852129942" class="contact-btn phone">Bel ons</a>
+      <a href="https://kabura.nl/offerte-aanvragen/" class="contact-btn quote">Offerte aanvragen</a>
+    </div>
+  </div>
+</div>
+
+<script>
+function toggleMenu() {
+  document.querySelector('.slide-menu').classList.toggle('active');
+  document.querySelector('.menu-overlay').classList.toggle('active');
+}
+</script>

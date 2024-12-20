@@ -1,0 +1,113 @@
+/* Menu Button */
+.menu-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 999;
+  background: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 30px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  z-index: 998;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Slide Menu */
+.slide-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: #80232A;
+  padding: 20px;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.slide-menu.active {
+  right: 0;
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Logo and Title */
+.menu-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.logo {
+  width: 200px;
+  margin-bottom: 15px;
+}
+
+.menu-header h3 {
+  color: white;
+  margin: 0;
+  font-size: 18px;
+}
+
+/* Contact Buttons */
+.contact-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.contact-btn {
+  display: block;
+  padding: 12px 20px;
+  border-radius: 8px;
+  color: white !important;
+  text-decoration: none !important;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.contact-btn:hover {
+  opacity: 0.9;
+}
+
+.whatsapp { background: #3499A3; }
+.phone { background: #222F52; }
+.quote { background: #94731A; }
+
+/* Mobile Adjustments */
+@media (max-width: 768px) {
+  .slide-menu {
+    width: 100%;
+    right: -100%;
+  }
+}
